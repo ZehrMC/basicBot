@@ -1,10 +1,3 @@
-/**
- *Copyright 2014 Yemasthui
- *Modifications (including forks) of the code to fit personal needs are allowed only for personal use and should refer back to the original source.
- *This software is not for profit, any extension, or unauthorised person providing this software is not authorised to be in a position of any monetary gain from this use of this software. Any and all money gained under the use of the software (which includes donations) must be passed on to the original author.
- */
-
-
 (function () {
 
     API.getWaitListPosition = function(id){
@@ -191,14 +184,14 @@
         retrieveSettings: retrieveSettings,
         retrieveFromStorage: retrieveFromStorage,
         settings: {
-            botName: "Mineward Bot",
+            botName: "MinewardBot",
             language: "english",
             chatLink: "https://rawgit.com/Yemasthui/basicBot/master/lang/en.json",
             startupCap: 1, // 1-200
             startupVolume: 0, // 0-100
             startupEmoji: false, // true or false
             maximumAfk: 120,
-            afkRemoval: true,
+            afkRemoval: false,
             maximumDc: 60,
             bouncerPlus: true,
             blacklistEnabled: true,
@@ -207,23 +200,23 @@
             maximumLocktime: 10,
             cycleGuard: true,
             maximumCycletime: 10,
-            voteSkip: true,
+            voteSkip: false,
             voteSkipLimit: 10,
-            historySkip: true,
+            historySkip: false,
             timeGuard: true,
-            maximumSongLength: 5,
+            maximumSongLength: 10,
             autodisable: true,
             commandCooldown: 30,
             usercommandsEnabled: true,
             lockskipPosition: 3,
             lockskipReasons: [
-                ["theme", "%%NAME%%, This song does not fit the room theme. "],
-                ["op", "%%NAME%%, This song is on the OP list. "],
-                ["history", "%%NAME%%, This song is in the history. "],
-                ["mix", "%%NAME%%, You played a mix, which is against the rules. "],
-                ["sound", "%%NAME%%, The song you played had bad sound quality or no sound. "],
-                ["nsfw", "%%NAME%%, The song you contained was NSFW (image or sound). "],
-                ["unavailable", "%%NAME%%, The song you played was not available for some users. "]
+                ["theme", "This song does not fit the room theme. "],
+                ["op", "This song is on the OP list. "],
+                ["history", "This song is in the history. "],
+                ["mix", "You played a mix, which is against the rules. "],
+                ["sound", "The song you played had bad sound quality or no sound. "],
+                ["nsfw", "The song you contained was NSFW (image or sound). "],
+                ["unavailable", "The song you played was not available for some users. "]
             ],
             afkpositionCheck: 15,
             afkRankCheck: "ambassador",
@@ -234,18 +227,18 @@
             etaRestriction: false,
             welcome: true,
             opLink: null,
-            rulesLink: https://mineward.com/threads/mineward-plugdj-room-rules-information.4/,
+            rulesLink: null,
             themeLink: null,
             fbLink: null,
             youtubeLink: null,
-            website: http://mineward.com,
+            website: null,
             intervalMessages: [],
             messageInterval: 5,
             songstats: true,
             commandLiteral: "!",
             blacklists: {
                 NSFW: "https://rawgit.com/Yemasthui/basicBot-customization/master/blacklists/ExampleNSFWlist.json",
-                OP: "https://rawgit.com/Yemasthui/basicBot-customization/master/blacklists/ExampleOPlist.json"
+                OP: "https://docs.google.com/document/d/1cR2ZofNpUGkwfaal9G6me63PAsFi6362wS9_dh2jM78/edit?usp=sharing"
             }
         },
         room: {
@@ -2937,7 +2930,6 @@
                              indexMuted = i;
                              wasMuted = true;
                              }
-
                              }
                              if (!wasMuted) return API.sendChat(subChat(basicBot.chat.notmuted, {name: chat.un}));
                              basicBot.room.mutedUsers.splice(indexMuted);
